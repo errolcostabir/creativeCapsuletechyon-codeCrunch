@@ -15,7 +15,8 @@ Team Member 2: Ashier Noah Fernandes : ashierchelsea@gmail.com : 9130683081 <br/
 Team Member 3: Maverick Cardozo : cardozomaverick99@gmail.com : 8379889656 <br/>
 <br/>
 <br/>
-## Project Details
+
+##  Project Details
 <br/>
 <br/>
 Hosted URL: <br/>
@@ -30,7 +31,8 @@ For Tasks 1-6 Tech Stack used is Node JS and Express JS
 Task 1-6 is implemented in Node JS and Express JS and hence one Github repository is made for tasks 1-6. Remaining Tasks are being implemented by my team mates in a separate language. Hence a separate link for the hosted url is also shared for tasks 1-6. 
 <br/>
 <br/>
-## Tasks Status:
+
+##  Tasks Status:
 
 * Task 1: DONE
 * Task 2: DONE
