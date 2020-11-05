@@ -9,32 +9,36 @@ var fetch = require('node-fetch');
 router.get('/country/search', (req, res, next) => {
   const searchText = req.query.searchText;
 
-  if (Number.isInteger(searchText)) {
-    var url = new URL("https://restcountries.eu/rest/v2/callingcode/" + searchText);
+
+  if (Number(searchText)) {
+    var newNum=Number(searchText);
+    console.log('Entered if '+ newNum);
+    var url = new URL("https://restcountries.eu/rest/v2/callingcode/" + newNum);
     fetch(url)
       .then((res) => {
         if (res.status === 404 || res.status === 200) {
           return res.json();
         }
       })
-      .then(data => {
-        if (data.status == 404) {
-          res.sendStatus(404);
+      .then((data) => {
+        if (data.status === 404) {
+          res.setHeader('Content-Type', 'Application/json');
+          res.send(JSON.stringify({status: 404,message: 'country not found'},undefined,4));
         }
         else {
           res.setHeader('Content-Type', 'Application/json');
           res.send(
             JSON.stringify(
               {
-                name: data['name'],
-                alpha2Code: data['alpha2Code'],
-                alpha3Code: data['alpha3Code'],
-                capital: data['capital'],
-                region: data['region'],
-                population: data['population'],
-                flag: data['flag'],
-                totalLanguages: data['languages'].length,
-                totalCurrencies: data['currencies'].length,
+                name: data[0]['name'],
+                alpha2Code: data[0]['alpha2Code'],
+                alpha3Code: data[0]['alpha3Code'],
+                capital: data[0]['capital'],
+                region: data[0]['region'],
+                population: data[0]['population'],
+                flag: data[0]['flag'],
+                totalLanguages: data[0]['languages'].length,
+                totalCurrencies: data[0]['currencies'].length,
               }, undefined, 2));
         }
       }, (err) => {
@@ -54,7 +58,8 @@ router.get('/country/search', (req, res, next) => {
       })
       .then(data => {
         if (data.status === 404) {
-          res.sendStatus(404);
+          res.setHeader('Content-Type', 'Application/json');
+          res.send(JSON.stringify({status: 404,message: 'country not found'},undefined,4));
         }
         else {
           res.setHeader('Content-Type', 'Application/json');
@@ -91,7 +96,8 @@ router.get('/country/search', (req, res, next) => {
       })
       .then((data) => {
         if (data.status === 404) {
-          res.sendStatus(404);
+          res.setHeader('Content-Type', 'Application/json');
+          res.send(JSON.stringify({status: 404,message: 'country not found'},undefined,4));
         }
         else {
           res.setHeader('Content-Type', 'Application/json');
@@ -120,7 +126,8 @@ router.get('/country/search', (req, res, next) => {
                 }, undefined, 2));
           }
           else {
-            res.sendStatus(404);
+            res.setHeader('Content-Type', 'Application/json');
+            res.send(JSON.stringify({status: 404, message: 'country not found'},undefined,4));
           }
         }
       }, (err) => {
@@ -148,7 +155,8 @@ router.get('/country/name/:country_name', (req, res, next) => {
       console.log(data.status);
       if (data.status === 404) {
         //console.log(data.status, data.message);
-        res.sendStatus(404);
+        res.setHeader('Content-Type', 'Application/json');
+        res.send(JSON.stringify({status: 404,message: 'country not found'},undefined,4));
       }
       else {
         // console.log('Success');
@@ -197,7 +205,8 @@ router.get('/country/code/:country_code', (req, res, next) => {
     .then(data => {
       //console.log(data.status);
       if (data.status === 404) {
-        res.sendStatus(404);
+        res.setHeader('Content-Type', 'Application/json');
+        res.send(JSON.stringify({status: 404,message: 'country not found'},undefined,4));
       }
       else {
         res.setHeader('Content-Type', 'Application/json');
@@ -246,7 +255,8 @@ router.get('/covid/country/search', (req, res, next) => {
     })
     .then((data) => {
       if (data.status === 404 || data.length===0) {
-        res.sendStatus(404);
+        res.setHeader('Content-Type', 'Application/json');
+        res.send(JSON.stringify({status: 404,message: 'no records found'},undefined,4));
       }
       else {
         res.setHeader('Content-Type', 'Application/json');
@@ -285,7 +295,8 @@ router.get('/covid/country/name/:country_name', (req, res, next) => {
     .then((data) => {
       console.log(data.length);
       if (data.status === 404 || data.length===0) {
-        res.sendStatus(404);
+        res.setHeader('Content-Type', 'Application/json');
+        res.send(JSON.stringify({status: 404,message: 'no records found'},undefined,4));
       }
 
       else {
@@ -325,7 +336,8 @@ router.get('/covid/country/code/:country_code', (req, res, next) => {
     .then(data => {
       console.log(data.length);
       if (data.status === 404 || data.length===0) {
-        res.sendStatus(404);
+        res.setHeader('Content-Type', 'Application/json');
+        res.send(JSON.stringify({status: 404,message: 'no records found'},undefined,4));
       }
       else {
         res.setHeader('Content-Type', 'Application/json');
