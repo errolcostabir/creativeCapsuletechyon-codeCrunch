@@ -2,7 +2,10 @@ var express = require('express');
 var router = express.Router();
 var fetch = require('node-fetch');
 
-//Search API endpoint
+
+//Section 1 API Endpoints
+
+//Search API endpoint for country
 
 router.get('/country/search', (req, res, next) => {
   const searchText = req.query.searchText;
@@ -141,6 +144,8 @@ router.get('/country/code/:country_code', (req, res, next) => {
     });
 });
 
+
+//Section 2 API Endpoint
 
 //Covid Search API Endpoint for country name or Code
 
