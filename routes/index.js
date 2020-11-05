@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var fetch = require('node-fetch');
 
+router.get('/',(req,res,next)=>{
+  res.send('Welcome to the main page of REST API TASKS for CodeCrunch');
+});
 
 //Section 1 API Endpoints
 
