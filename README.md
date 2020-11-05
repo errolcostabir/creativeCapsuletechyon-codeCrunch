@@ -23,12 +23,15 @@ Hosted URL: <br/>
 [a Heroku Link](https://code-crunch.herokuapp.com/) <br/>
 
 Tech Stack used: <br/>
-For Tasks 1-6 Tech Stack used is Node JS and Express JS
+For Tasks 1-8 Tech Stack used is Node JS and Express JS
 <br/>
 <br/>
 ## Note/Comments:
 <br/>
-Task 1-6 is implemented in Node JS and Express JS and hence one Github repository is made for tasks 1-6. Remaining Tasks are being implemented by my team mates in a separate language. Hence a separate link for the hosted url is also shared for tasks 1-6. 
+Task 1-6 is present in index.js file in routes folder. Task 7-8 is present in weather.js file in routes folder.
+Task 1-8 is implemented in Node JS and Express JS and hence one Github repository is made for tasks 1-8. 
+Remaining Tasks are being implemented by my team mates in a separate language. 
+Hence a separate link for the heroku url is also shared for tasks 1-8. 
 <br/>
 <br/>
 
@@ -40,4 +43,6 @@ Task 1-6 is implemented in Node JS and Express JS and hence one Github repositor
 * Task 4: DONE
 * Task 5: DONE
 * Task 6: DONE
-* Task 7-11: In Progress
+* Task 7: DONE
+* Task 8: DONE
+* Task 9-11: IN-PROGRESS
