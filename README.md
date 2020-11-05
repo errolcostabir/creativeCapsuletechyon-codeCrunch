@@ -31,8 +31,7 @@ Task 1-6 is implemented in Node JS and Express JS and hence one Github repositor
 <br/>
 <br/>
 ## Tasks Status:
-<br/>
-<br/>
+
 * Task 1: DONE
 * Task 2: DONE
 * Task 3: DONE
