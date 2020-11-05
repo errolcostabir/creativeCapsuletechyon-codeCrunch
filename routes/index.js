@@ -5,6 +5,7 @@ var fetch = require('node-fetch');
 //Section 1 API Endpoints
 
 //Search API endpoint for country
+//Task 3
 
 router.get('/country/search', (req, res, next) => {
   const searchText = req.query.searchText;
@@ -140,6 +141,7 @@ router.get('/country/search', (req, res, next) => {
 });
 
 //Country Name API Endpoint
+//Task 1
 
 router.get('/country/name/:country_name', (req, res, next) => {
   const name = req.params.country_name;
@@ -184,6 +186,7 @@ router.get('/country/name/:country_name', (req, res, next) => {
 });
 
 //Country Code API Endpoint
+//Task 2
 
 router.get('/country/code/:country_code', (req, res, next) => {
 
@@ -236,6 +239,7 @@ router.get('/country/code/:country_code', (req, res, next) => {
 //Section 2 API Endpoint
 
 //Covid Search API Endpoint for country name or Code
+//Task 6
 
 router.get('/covid/country/search', (req, res, next) => {
   const searchText = req.query.searchText;
@@ -280,6 +284,7 @@ router.get('/covid/country/search', (req, res, next) => {
 
 
 //covid Country name API Endpoint 
+//Task 4
 
 router.get('/covid/country/name/:country_name', (req, res, next) => {
   const name = req.params.country_name;
@@ -321,6 +326,7 @@ router.get('/covid/country/name/:country_name', (req, res, next) => {
 
 
 //covid Country code API Endpoint
+//Task 5
 
 router.get('/covid/country/code/:country_code', (req, res, next) => {
   const code = req.params.country_code;
