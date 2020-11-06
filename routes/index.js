@@ -32,14 +32,15 @@ router.get('/country/search', (req, res, next) => {
             JSON.stringify(
               {
                 name: data[0]['name'],
-                alpha2Code: data[0]['alpha2Code'],
-                alpha3Code: data[0]['alpha3Code'],
+                //alpha2Code: data[0]['alpha2Code'],
+                //alpha3Code: data[0]['alpha3Code'],
                 capital: data[0]['capital'],
-                region: data[0]['region'],
+                //region: data[0]['region'],
                 population: data[0]['population'],
                 flag: data[0]['flag'],
                 totalLanguages: data[0]['languages'].length,
                 totalCurrencies: data[0]['currencies'].length,
+                totalTimezones: data[0]['timezones'].length
               }, undefined, 2));
         }
       }, (err) => {
@@ -68,14 +69,15 @@ router.get('/country/search', (req, res, next) => {
             JSON.stringify(
               {
                 name: data['name'],
-                alpha2Code: data['alpha2Code'],
-                alpha3Code: data['alpha3Code'],
+                //alpha2Code: data['alpha2Code'],
+                //alpha3Code: data['alpha3Code'],
                 capital: data['capital'],
-                region: data['region'],
+                //region: data['region'],
                 population: data['population'],
                 flag: data['flag'],
                 totalLanguages: data['languages'].length,
                 totalCurrencies: data['currencies'].length,
+                totalTimezones: data['timezones'].length
               }, undefined, 2));
         }
       }, (err) => {
@@ -116,14 +118,15 @@ router.get('/country/search', (req, res, next) => {
               JSON.stringify(
                 {
                   name: data[index]['name'],
-                  alpha2Code: data[index]['alpha2Code'],
-                  alpha3Code: data[index]['alpha3Code'],
+                  //alpha2Code: data[index]['alpha2Code'],
+                  //alpha3Code: data[index]['alpha3Code'],
                   capital: data[index]['capital'],
-                  region: data[index]['region'],
+                  //region: data[index]['region'],
                   population: data[index]['population'],
                   flag: data[index]['flag'],
                   totalLanguages: data[index]['languages'].length,
                   totalCurrencies: data[index]['currencies'].length,
+                  totalTimezones: data[index]['timezones'].length
                 }, undefined, 2));
           }
           else {
@@ -225,6 +228,7 @@ router.get('/country/code/:country_code', (req, res, next) => {
               flag: data['flag'],
               totalLanguages: data['languages'].length,
               totalCurrencies: data['currencies'].length,
+              totalTimezones: data['timezones'].length
             }, undefined, 20));
       }
     }, (err) => {
